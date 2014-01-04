@@ -13,6 +13,7 @@ To-Do:
 
 * Settings page
 * Work with playlists and other YouTube URLs
+* Twitch Support (maybe?)
 * Open other videos in the same panel rather than making new ones
 * Less crappy icons
 

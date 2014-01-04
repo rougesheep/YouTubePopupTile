@@ -1,0 +1,26 @@
+<html>
+	<head>
+		<title>YouTube Pop-up Tile Options</title>
+		<link rel="stylesheet" type="text/css" href="options.css">
+		<script src="options.js"></script>
+	</head>
+
+<body>
+	<div id="container">
+		<h1>YouTube Pop-up Tile Options</h1>
+		<div>
+			<p><b>Pop-up Type:</b></p>
+			<input name="popup_type" type="radio" value="frame" checked>Frame
+			<input name="popup_type" type="radio" value="window">Window
+			<p class="note">Note: For frames to work you need to enable the respective flag in chrome://flags otherwise a normal window will be shown anyway.</p>
+		</div>
+		<div>
+			<p><b>Pop-up Size:</b></p>
+			<p>
+				Width: <input name="popup_width" type="number" value="600"> 
+				Height: <input name="popup_height"type="number" value="376">
+			</p>
+		</div>
+		<button id="save">Save</button>
+	</body>
+</html>

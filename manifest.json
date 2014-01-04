@@ -4,6 +4,7 @@
   "name": "YouTube Popup Tile",
   "description": "Opens the current YouTube video in a fullscreen window.",
   "version": "1.0",
+  "options_page": "options.html",
   "permissions": [
     "tabs"
   ],
