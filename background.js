@@ -15,16 +15,37 @@ chrome.tabs.onUpdated.addListener(checkForValidUrl);
 
 chrome.pageAction.onClicked.addListener(function(tab){
   //var thisTab = tab.url;
+  var uri = new Uri(tab.url);
+  var protocol = uri.protocol();
+  var host = uri.host();
+  var path = uri.path();
+  var query = uri.query();
 
+  //alert(" protocol: " + protocol + " host: " + host + " path: " + path + " query: " + query);
+  
+  switch (host) {
+    case "www.youtube.com":
+      //var video = query.split("=");
+      alert(typeof query);
+      break;
+    case "www.twitch.tv":
+      alert("Twitch stream " + path);
+      break;
+    default:
+      alert("I don't know.");
+      break;
+  }
+
+  /*
   if (tab.url.indexOf("youtube") != -1) {
-    var string = tab.url.split("v=");
-    var embedded = "https://www.youtube.com/embed/" + string[1];
-    //Reload current tab with embedded URL
-    //chrome.tabs.update(tab.id, {url: embedded});
+    
+    //Split url into array
+    //var string = tab.url.split("v=");
+    //var embedded = "https://www.youtube.com/embed/" + string[1];
     //Close current tab
-    chrome.tabs.remove(tab.id);
+    //chrome.tabs.remove(tab.id);
     //Open embedded URL in a panel
-    chrome.windows.create({url: embedded, type: "panel", height: 376, width: 600});
+    //chrome.windows.create({url: embedded, type: "panel", height: 376, width: 600});
   }
   else if (tab.url.indexOf("twitch") != -1) {
     var string = tab.url.split("/");
@@ -32,8 +53,7 @@ chrome.pageAction.onClicked.addListener(function(tab){
     chrome.windows.create({url: embedded, type: "panel", height: 376, width: 600});
   }
   else {
-    alert("other");
+    alert("Something went wrong.");
   }
-
-  
+  */
 });

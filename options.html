@@ -8,6 +8,7 @@
 <body>
 	<div id="container">
 		<h1>YouTube Pop-up Tile Options</h1>
+		<p>Non-functional</p>
 		<div>
 			<h2>Pop-up Type:</h2>
 			<input name="popup_type" type="radio" value="frame" checked>Frame
@@ -22,6 +23,23 @@
 			</p>
 			<p class="note">Max size: ??*??</p>
 		</div>
+		<div>
+			<h2>Enabled Sites:</h2>
+			<input name="handle_site" type="checkbox" value="YouTube" checked>YouTube<br />
+			<input name="handle_site" type="checkbox" value="Twitch" checked>Twitch.tv<br />
+			<input name="handle_site" type="checkbox" value="Twitter" disabled>Twitter<br />
+			<input name="handle_site" type="checkbox" value="Google+" disabled>Google +<br />
+			<input name="handle_site" type="checkbox" value="Facebook" disabled>Facebook<br />
+			<input name="handle_site" type="checkbox" value="Reddit" disabled>Reddit
+		</div>
 		<button id="save">Save</button>
+		<div id="footer">
+			<h2>Links:</h2>
+				<ul>
+					<li><a href="https://github.com/rougesheep/YouTubePopupTile">Github Page</a></li>
+					<li><a href="mailto:dev@ajburne.co.uk">Email Me</a></li>
+					<li><a href="https://plus.google.com/+AndyBurne">My G+</a></li>
+				</ul>
+		</div>
 	</body>
 </html>

@@ -8,7 +8,7 @@
   "permissions": [
     "tabs"
   ],
-  "background": {"scripts": ["background.js"] },
+  "background": {"scripts": ["background.js","jsuri-1.1.1.js"] },
   "page_action": {
     "default_icon": "icon.png",
     "default_title": "YouTube Tile"

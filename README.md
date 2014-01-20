@@ -53,3 +53,8 @@ From Source
 * Put files into the install folder
 * Open chrome://extensions
 * Click "Reload"
+
+Credits
+=======
+
+* [JSURI by Derek Watson](https://code.google.com/p/jsuri)
