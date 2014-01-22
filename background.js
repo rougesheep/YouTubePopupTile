@@ -16,21 +16,36 @@ chrome.tabs.onUpdated.addListener(checkForValidUrl);
 chrome.pageAction.onClicked.addListener(function(tab){
   //var thisTab = tab.url;
   var uri = new Uri(tab.url);
-  var protocol = uri.protocol();
-  var host = uri.host();
-  var path = uri.path();
-  var query = uri.query();
+  var protocol = uri.protocol().toString();
+  var host = uri.host().toString();
+  var path = uri.path().toString();
+  var query = uri.query().toString();
 
   //alert(" protocol: " + protocol + " host: " + host + " path: " + path + " query: " + query);
   
   switch (host) {
+
     case "www.youtube.com":
-      //var video = query.split("=");
-      alert(typeof query);
+      var video = query.substring(3);
+      video = (video.split("&"))[0];
+      //small medium large
+      var embedded = "https://www.youtube.com/embed/" + video + "&vq=hd720";
+      //alert(embedded);
+      //Close current tab
+	  chrome.tabs.remove(tab.id);
+      //Open embedded URL in a panel
+      chrome.windows.create({url: embedded, type: "panel", height: 376, width: 600});
       break;
+
     case "www.twitch.tv":
-      alert("Twitch stream " + path);
+      //alert("Twitch stream " + path);
+      var embedded = "http://www.twitch.tv" + path + "/popout"
+      //Close current tab
+	  chrome.tabs.remove(tab.id);
+      //Open embedded URL in a panel
+      chrome.windows.create({url: embedded, type: "panel", height: 376, width: 560});
       break;
+
     default:
       alert("I don't know.");
       break;
